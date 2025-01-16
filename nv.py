@@ -46,7 +46,7 @@ with col2:
     
     # Model selection
     model_options = {
-        "Nemotron 4 340B": "nvidia/nemotron-4-340b-instruct",
+        "Nemotron 3.1 70B": "nvidia/llama-3.1-nemotron-70b-instruct",
         "Yi Large": "01-ai/yi-large",
         "Mixtral 8x22B": "mistralai/mixtral-8x22b-instruct",
         "Llama3 70B": "meta/llama3-70b",
