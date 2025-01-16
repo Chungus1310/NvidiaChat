@@ -26,20 +26,23 @@ st.markdown("""
 
 # Initialize API client
 API_KEY = os.getenv("nv_token")
-if not API_KEY:
-    st.error("API key is missing! Please set 'nv_token' as an environment variable.")
-    st.stop()
 
-client = OpenAI(
-    base_url="https://integrate.api.nvidia.com/v1",
-    api_key=API_KEY
-)
-
-# Main content and sidebar layout
 col1, col2 = st.columns([2, 1])
 
 with col2:
     st.sidebar.title("Chat Settings")
+    
+    # API Key input
+    user_api_key = st.sidebar.text_input("API Key", type="password", value=API_KEY or "")
+    if not user_api_key:
+        st.error("Please enter your API key in the sidebar.")
+        st.stop()
+    
+    # Update API client with user provided key
+    client = OpenAI(
+        base_url="https://integrate.api.nvidia.com/v1",
+        api_key=user_api_key
+    )
     
     # Model selection
     model_options = {
