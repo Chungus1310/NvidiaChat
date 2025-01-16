@@ -62,7 +62,7 @@ with col2:
     # Chat parameters with new defaults
     temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.3)
     top_p = st.sidebar.slider("Top P", 0.0, 1.0, 0.95)
-    max_tokens = st.sidebar.slider("Max Tokens", 100, 2000, 1024)
+    max_tokens = st.sidebar.slider("Max Tokens", 100, 2048, 1024)
     
     # System prompt
     system_prompt = st.sidebar.text_area(
